@@ -65,10 +65,11 @@
 // app.listen(5000);
 
 const { MongoClient } = require("mongodb");
+require("dotenv").config();
 
 // Replace the following with your Atlas connection string
-const url =
-  "mongodb+srv://dohonglong:honglong1998@gettingstarted.crkxfbp.mongodb.net/?retryWrites=true&w=majority";
+const url = `${process.env.MONGO_URI}`;
+
 // Connect to your Atlas cluster
 const client = new MongoClient(url);
 async function run() {
